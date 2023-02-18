@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <script
+      src="https://kit.fontawesome.com/fc240c03f0.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/css/home.css" />
+  </head>
+  <body>
+        <div class="outside">
+            <div class="inside">
+
+                <div class="header">
+                    <div class="main">
+                      <div><i id="img" class="fa-solid fa-address-book"></i></div>
+                      <div><h1>CONATCT LIST</h1></div>
+                    </div>
+                  </div>
+                  <!-- header ends -->
+              
+                  <div class="contacts">
+                    <% for(let i of contact_list){ %>
+              
+                    <div class="addcon">
+                      <div class="name"><%= i.name %></div>
+                      <div class="name"><%= i.phone %></div>
+                      <div class="dele"><a href=" /delete-contact/?phone=<%= i.phone %>"><i class="fa-solid fa-trash"></i></a></div>
+                    </div>
+              
+                    <%}%>
+                  </div>
+              
+                  <!-- lets create a form  --> 
+                   <form action="/create-contact" method="POST">
+                    <div class="input">
+                      <input type="text"  class="namec" required placeholder="Enter your name"  name="name"/>
+                      <input type="number" required placeholder="Enter your phoneno" name="phone" />
+                    </div>
+                      
+              
+                    <div class="button">
+                                     <div>  <button type="submit">Add Contact</button> </div>
+                    </div>
+                  
+                  </form>
+                
+            </div>
+
+            <!-- inside ends -->
+        </div>
+
+        <!-- outside ends -->
+
+
+ 
+  </body>
+</html>
